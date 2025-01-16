@@ -1,5 +1,6 @@
 package com.udla.notifications.telegram;
 
+import com.udla.notifications.consumer.configuration.ConsumerConfiguration;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 @Slf4j
 public class Telegram {
-    @RabbitListener(queues = "notifications.queue")
+    @RabbitListener(queues = ConsumerConfiguration.QUEUE_NOTIFICATIONS)
     public void justificationSuccess(String attendance) {
         log.info(attendance);
     }
