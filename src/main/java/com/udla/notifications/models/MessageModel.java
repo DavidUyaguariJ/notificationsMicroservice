@@ -11,6 +11,5 @@ public class MessageModel {
     private String idClient; 
     private String name;
     private String productName;
-    private String productQuantity;
-    private boolean isSale; 
+    private int productQuantity;
 }
