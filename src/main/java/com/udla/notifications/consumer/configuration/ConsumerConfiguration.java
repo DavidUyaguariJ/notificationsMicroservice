@@ -11,8 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ConsumerConfiguration {
 
-    public final static String QUEUE_NOTIFICATIONS_SALES = "notifications.sales";
-    public final static String QUEUE_NOTIFICATIONS_PURCHASES = "notifications.purchases";
+    public final static String QUEUE_NOTIFICATIONS_SALES = "sales.queue";
 
     @Bean
     public MessageConverter messageConverter(){
