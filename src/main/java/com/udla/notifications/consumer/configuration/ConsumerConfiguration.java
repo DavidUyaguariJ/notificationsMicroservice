@@ -7,10 +7,12 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 @Configuration
 public class ConsumerConfiguration {
 
-    public final static String QUEUE_NOTIFICATIONS = "notifications.queue";
+    public final static String QUEUE_NOTIFICATIONS_SALES = "notifications.sales";
+    public final static String QUEUE_NOTIFICATIONS_PURCHASES = "notifications.purchases";
 
     @Bean
     public MessageConverter messageConverter(){
@@ -23,4 +25,5 @@ public class ConsumerConfiguration {
         template.setMessageConverter(messageConverter());
         return template;
     }
+
 }
