@@ -12,7 +12,8 @@ import org.springframework.context.annotation.Configuration;
 public class ConsumerConfiguration {
 
     public final static String QUEUE_NOTIFICATIONS_SALES = "sales.queue";
-
+    public final static String QUEUE_NOTIFICATIONS_PURCHASES = "purchases.queue";
+    
     @Bean
     public MessageConverter messageConverter(){
         return new Jackson2JsonMessageConverter();
