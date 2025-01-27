@@ -32,7 +32,7 @@ public class SalesMessage {
 
             String telegramApiUrl = String.format(
                     "https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text=%s",
-                    "7808056100:AAFTicOXihwVi7YgBvDzLyPi1rHv9YMItQ0", message.getIdClient(), strMessage.toString()
+                    "t", message.getIdClient(), strMessage.toString()
             );
 
             restTemplate.getForObject(telegramApiUrl, String.class);
