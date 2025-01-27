@@ -22,16 +22,17 @@ public class SalesMessage {
     @RabbitListener(queues = ConsumerConfiguration.QUEUE_NOTIFICATIONS_SALES)
     public void confirmSale(MessageModel  message) {
 
-        log.info("Sale confirmation: {}", message);
+        log.info("Purchases confirmation: {}", message);
         StringBuilder strMessage = new StringBuilder();
         strMessage.append("Hola ").append(message.getName()).append("\n")
-                .append("Su venta se ha generado exitosamente por el producto: ").append(message.getProductName()).append("\n")
+                .append("Su venta se ha ").append(message.getDescription()).append("\n")
+                .append("con éxito por el producto: ").append(message.getProductName()).append("\n")
                 .append("Cantidad: ").append(message.getProductQuantity());
         try {
 
             String telegramApiUrl = String.format(
                     "https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text=%s",
-                    " token", message.getIdClient(), strMessage.toString()
+                    "t", message.getIdClient(), strMessage.toString()
             );
 
             restTemplate.getForObject(telegramApiUrl, String.class);

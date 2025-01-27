@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MessageModel {
-    private String idClient; 
+    private String idClient;
     private String name;
     private String productName;
     private int productQuantity;
-    private String secondIdClient;
+    private String description;
 }
